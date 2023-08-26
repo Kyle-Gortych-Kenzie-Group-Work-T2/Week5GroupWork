@@ -94,6 +94,7 @@ package com.kenzie.groupwork.shoppingadvisor.widget;
 import com.kenzie.groupwork.shoppingadvisor.client.EditorialServiceClient;
 import com.kenzie.groupwork.shoppingadvisor.model.ShoppingAdviserProduct;
 import com.kenzie.groupwork.shoppingadvisor.model.ShoppingContext;
+import com.kenzie.groupwork.shoppingadvisor.resources.EditorialRecommendedProduct;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,7 +109,16 @@ public class EditorialAdviserWidget extends ShoppingAdviserWidget{
 
     @Override
     public List<ShoppingAdviserProduct> getAdvisedProducts() {
-        return new ArrayList<>();
+        ShoppingContext shoppingContext = getShoppingContext();
+
+        List<EditorialRecommendedProduct> listOfProducts = editorialServiceClient.getEditorialRecommendedProducts(shoppingContext.getSearchTerm(), shoppingContext.getSearchCategory(), shoppingContext.getMarketplaceId());
+        List<ShoppingAdviserProduct> convertedList = new ArrayList<>();
+
+        for(EditorialRecommendedProduct editorial : listOfProducts) {
+            convertedList.add(new ShoppingAdviserProduct(editorial.getRecommendation(), editorial.getProduct()));
+        }
+
+        return convertedList;
     }
 
 
@@ -156,11 +166,49 @@ public class EditorialServiceClient {
             String searchTerm,
             SearchCategory searchCategory,
             String marketplaceId) {
-        ShoppingContext shoppingContext = getShoppingContext();
         return editorialService.getEditorialRecommendedProducts(searchTerm, searchCategory, marketplaceId);
     }
 }
 ```
 </details>
+
+<details>
+  <summary>ShoppingAdviserWidgetTestRenderer.java</summary>
+  
+``` java
+package com.kenzie.groupwork.shoppingadvisor;
+
+import com.kenzie.groupwork.shoppingadvisor.client.AmazonSearchServiceClient;
+import com.kenzie.groupwork.shoppingadvisor.client.AmazonsChoiceServiceClient;
+import com.kenzie.groupwork.shoppingadvisor.model.ShoppingContext;
+import com.kenzie.groupwork.shoppingadvisor.resources.SearchCategory;
+import com.kenzie.groupwork.shoppingadvisor.widget.AmazonsChoiceAdviserWidget;
+import com.kenzie.groupwork.shoppingadvisor.widget.ShoppingAdviserWidget;
+
+public class ShoppingAdviserWidgetTestRenderer {
+
+    /**
+     * Returns the renderable content for a widget in String format.
+     * @param widget the widget to render
+     * @return A String containing the renderable content of a widget
+     */
+    public String getRenderableContent(ShoppingAdviserWidget widget) {
+        return widget.getSimpleRendering();
+    }
+
+    public static void main(String[] args) {
+
+        ShoppingAdviserWidgetTestRenderer renderer = new ShoppingAdviserWidgetTestRenderer();
+
+        AmazonsChoiceAdviserWidget amazonsChoiceAdviserWidget = new AmazonsChoiceAdviserWidget(
+            new ShoppingContext("grill", SearchCategory.HOME_AND_GARDEN, "ATVPDKIKX0DER"),
+            new AmazonsChoiceServiceClient(), new AmazonSearchServiceClient());
+
+        System.out.println(renderer.getRenderableContent(amazonsChoiceAdviserWidget));
+    }
+}
+```
+</details>
+
 
 </details>
