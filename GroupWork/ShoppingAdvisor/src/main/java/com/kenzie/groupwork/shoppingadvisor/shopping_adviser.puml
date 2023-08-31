@@ -55,14 +55,6 @@ class ShoppingAdviserWidgetTestRenderer {
   + getRenderableContent(widget : AmazonsChoiceAdviserWidget) : String
 }
 
-class EditorialAdviserWidget {
-  getAdvisedProducts(): List<ShoppingAdviserProduct>
-}
-
-EditorialAdviserWidget *-- AmazonsChoiceAdviserWidget
-EditorialAdviserWidget --|> ShoppingAdviserWidget
-EditorialAdviserWidget *-- EditorialServiceClient
-
 ShoppingAdviserWidget *-- ShoppingContext
 ShoppingAdviserWidget <|-- AmazonsChoiceAdviserWidget
 AmazonsChoiceAdviserWidget *-- SearchServiceClient

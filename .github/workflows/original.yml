@@ -1,9 +1,9 @@
-name: GitHub Classroom Workflow
+name: original
 
-on: 
+on:
   push:
     branches:
-      - main
+      - original
 
 permissions:
   checks: write

@@ -1,6 +1,5 @@
 package com.kenzie.groupwork.shoppingadvisor.client;
 
-import com.kenzie.groupwork.shoppingadvisor.model.ShoppingContext;
 import com.kenzie.groupwork.shoppingadvisor.resources.EditorialRecommendedProduct;
 import com.kenzie.groupwork.shoppingadvisor.resources.EditorialService;
 import com.kenzie.groupwork.shoppingadvisor.resources.SearchCategory;
