@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Groupwork Shopping Advisor Unit Tests",
+      "setup": "",
+      "run": "./gradlew groupwork-shoppingadvisor-test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
