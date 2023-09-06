@@ -143,7 +143,9 @@ index d091a7f..0000000
 
 ### Gradle Commands
 
-* `./gradlew groupwork-shoppingadvisor-test` - Run Unit Tests for Group Work Shopping Advisor
+```console
+./gradlew groupwork-shoppingadvisor-test
+```
 <br>
 
 <a href="your-gmail-link?">:mailbox:</a> How to reach the maintainer
