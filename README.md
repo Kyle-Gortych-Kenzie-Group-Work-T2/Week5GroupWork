@@ -1,18 +1,27 @@
-# Kenzie Java Project
+<div align="right">
+ 
+![week 2](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T2/Week5GroupWork/main.yml?label=main) ![week 2](https://img.shields.io/github/actions/workflow/status/Kyle-Gortych-Kenzie-Group-Work-T2/Week5GroupWork/original.yml?label=original)
 
-Follow the instructions in your activity readings to complete this assignment.
+</div>
 
+# Week 5 Group Project
+descript
 
-## Gradle Commands
+<div align="center">
+ 
+### :hammer_and_wrench: Tools :
 
-### Visitor Logs
+| Version Control | Build System | Languages |
+| --------------- | ------------ | --------- |
+| <img src="https://img.shields.io/badge/Git-white?style=plastic&logo=git&logoColor=red" title="Git" alt="Git" height="30"/> | <img src="https://img.shields.io/badge/Gradle-white?style=plastic&logo=gradle&logoColor=black" title="gradle" alt="gradle" height="30"/> | <img src="https://custom-icon-badges.demolab.com/badge/Java-white.svg?&sytle=plastic&logo=java" title="Java" alt="Java" height="30"/> |
+</div>
+<br>
 
-* `./gradlew inheritance-visitorlogs-test` - Run Unit Tests for Visitor Logs
+### Gradle Commands
 
-### Flower Garden 
-./gradlew inheritance-flowergarden-test`
-* `./gradlew inheritance-flowergarden-test` - Run Unit Tests for Flower Garden
+```console
+./gradlew groupwork-shoppingadvisor-test
+```
+<br>
 
-### Shopping Advisor 
-
-* `./gradlew groupwork-shoppingadvisor-test` - Run Unit Tests for Group Work Shopping Advisor
+<a href="your-gmail-link?">:mailbox:</a> How to reach the maintainer
